@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Tracking</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Request Tracking</h1>
+    <ul>
+        {% for request in user_requests %}
+            <li>
+                <strong>Request Type:</strong> {{ request.request_type }}<br>
+                <strong>Details:</strong> {{ request.details }}<br>
+                <strong>Status:</strong> {{ request.status }}<br>
+                <strong>Created At:</strong> {{ request.created_at }}<br>
+                {% if request.resolved_at %}
+                    <strong>Resolved At:</strong> {{ request.resolved_at }}<br>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No requests found.</li>
+            
+        {% endfor %}
+        <a href="{% url 'submit_request' %}">New Request Submit</a>
+        
+
+        {% endblock content %}
+    </ul>
+     
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    
+    {% block content %}
+    <h1>User Profile</h1>
+    <p>Welcome, {{ user.username }}!</p>
+   
+     <ul>
+        <li><a href="{% url 'submit_request' %}">Submit Service Request</a></li>
+        <li><a href="{% url 'request_tracking' %}">Track Service Request</a></li>
+        <!-- <li><a href="{% url 'profile' %}">My Profile</a></li> -->
+        <!-- <li><a href="{% url 'register' %}">registration</a></li> -->
+        <!-- Add more links as needed -->
+    </ul>
+
+  {% endblock content %}
+</body>
+</html>

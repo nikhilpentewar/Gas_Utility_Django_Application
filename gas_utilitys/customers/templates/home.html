@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Utility Company</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Welcome to Gas Utility Company</h1>
+    <p>This is the homepage of our gas utility company website.</p>
+    <!-- Add more content or links as needed -->
+    <ul>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'register' %}">Register</a></li>
+        <!-- Add more links as needed -->
+    </ul>
+    {% endblock content %}
+
+</body>
+</html>
